@@ -203,4 +203,32 @@ body {
     text-align: center;
     padding: 12px 0;
     font-size: 11px;
+}/* すべての画像が親要素からはみ出さないように設定 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* プロフィール画像のサイズ指定（お好みの大きさに調整可能） */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%; /* 丸くしたい場合 */
+}
+
+/* ポートフォリオグリッド（画像を横並びに配置） */
+.portfolio-grid {
+    display: flex;
+    gap: 16px;            /* 画像同士の間隔 */
+    justify-content: center;
+    flex-wrap: wrap;       /* 画面幅に応じて折り返し */
+}
+
+/* ポートフォリオ各画像のサイズ指定 */
+.portfolio-item {
+    width: 200px;         /* 画像の幅（大きすぎたら150pxなどに変更） */
+    height: 150px;        /* 画像の高さ */
+    object-fit: cover;    /* 縦横比を崩さずにトリミング */
+    border-radius: 8px;   /* 角丸（お好みで） */
 }
