@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電卓 - 私のポートフォリオ</title>
+  <!-- 共通のCSSを読み込み -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ヘッダー（全ページ共通ナビゲーション） -->
+  <header>
+    <h1>私のポートフォリオ</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="work.html">課題</a></li>
+        <li><a href="calc.html">電卓</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main>
+    <h2>電卓</h2>
+    
+    <div style="margin-bottom: 20px;">
+      <!-- 値1 -->
+      <input type="number" id="num1" placeholder="値1">
+      
+      <!-- 演算子 -->
+      <select id="operator">
+        <option value="+">＋</option>
+        <option value="-">－</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      
+      <!-- 値2 -->
+      <input type="number" id="num2" placeholder="値2">
+    </div>
+
+    <!-- 結果表示エリア -->
+    <div id="result" style="font-size: 1.2em; font-weight: bold; color: #333;">
+      両方の数値を入力してください
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2026 私のポートフォリオ</p>
+  </footer>
+
+  <!-- 電卓用のJavaScriptを読み込み -->
+  <script src="calc.js"></script>
+</body>
+</html>
