@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>課題提出場所</title>
-   <link rel="stylesheet" href="css/style.css">
+  <title>GitHub検索 - 私のポートフォリオ</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ヘッダー部分 -->
+  <!-- ヘッダーナビゲーション -->
   <header class="header">
     <h1>私のポートフォリオ</h1>
     <nav>
@@ -17,26 +17,28 @@
         <li><a href="contact.html">お問い合わせ</a></li>
         <li><a href="work.html">課題</a></li>
         <li><a href="calc.html">電卓</a></li>
-        <li><a href="github_search.html">GitHub検索</a></li> <!-- ★追加 -->
+        <li><a href="github_search.html">GitHub検索</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- メインコンテンツ -->
   <main class="container">
-    <h2>課題提出場所</h2>
-    
-    <ul class="task-list">
-      <li><a href="1_3.html">1_3Work課題</a></li>
-      <li><a href="1_4.html">1_4Work課題</a></li>
-      <li><a href="1_6.html">1_6Work課題</a></li>
-    </ul>
+    <h2>GitHubユーザー検索</h2>
+
+    <div style="margin: 20px 0;">
+      <input type="text" id="username" placeholder="GitHubユーザー名を入力 (例: octocat)">
+      <button id="searchBtn">検索</button>
+    </div>
+
+    <!-- 検索結果表示エリア -->
+    <div id="result"></div>
   </main>
 
-  <!-- フッター部分 -->
   <footer>
-    <p>&copy; 私のポートフォリオ</p>
+    <p>&copy; 2026 私のポートフォリオ</p>
   </footer>
 
+  <script src="github_search.js"></script>
 </body>
 </html>
