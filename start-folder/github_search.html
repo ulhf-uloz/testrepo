@@ -4,13 +4,73 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub検索 - 私のポートフォリオ</title>
+  <!-- 共通CSSを読み込み。パスが正しいか確認してください -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- 検索ページ専用のスタイル調整 -->
+  <style>
+    /* 中央に配置する白いカード */
+    .search-card {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 480px; /* 画像に近い幅 */
+      margin: 40px auto; /* 画面中央、上下に余白 */
+      text-align: center; /* すべて中央揃え */
+    }
+
+    .search-card h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      margin-bottom: 25px;
+    }
+
+    /* 入力エリアのレイアウト */
+    .search-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* 入力欄とボタンの間隔 */
+      margin-bottom: 25px;
+    }
+
+    .search-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* paddingを含めた幅計算 */
+    }
+
+    /* 画像のような青系ボタン */
+    .search-form button {
+      background-color: #3f51b5; /* ヘッダーに近い青紫 */
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .search-form button:hover {
+      background-color: #303f9f; /* ホバーで少し濃く */
+    }
+
+    /* 検索結果表示エリア（JSで中身を入れる） */
+    #result {
+      min-height: 20px; /* エリアを確保 */
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ヘッダーナビゲーション -->
+  <!-- ヘッダー（画像のデザイン） -->
   <header class="header">
-    <h1>私のポートフォリオ</h1>
+    <h1>お問い合わせ</h1> <!-- 画像では「お問い合わせ」のままなのでそれに合わせています -->
     <nav>
       <ul>
         <li><a href="index.html">ホーム</a></li>
@@ -22,23 +82,30 @@
     </nav>
   </header>
 
-  <!-- メインコンテンツ -->
-  <main class="container">
-    <h2>GitHubユーザー検索</h2>
+  <!-- メインコンテンツエリア（背景が薄グレー） -->
+  <main class="main-content" style="background-color: #f4f6f9; padding: 20px;">
+    
+    <!-- 中央の白いカード -->
+    <div class="search-card">
+      <h2>GitHubユーザー情報を取得しよう</h2>
 
-    <div style="margin: 20px 0;">
-      <input type="text" id="username" placeholder="GitHubユーザー名を入力 (例: octocat)">
-      <button id="searchBtn">検索</button>
+      <div class="search-form">
+        <!-- プレースホルダーを画像に合わせる -->
+        <input type="text" id="username" placeholder="GitHubユーザー名を入力 ">
+        <button id="searchBtn">検索</button>
+      </div>
+
+      <!-- 検索結果表示エリア -->
+      <div id="result"></div>
     </div>
-
-    <!-- 検索結果表示エリア -->
-    <div id="result"></div>
   </main>
 
-  <footer>
+  <!-- フッター -->
+  <footer class="footer">
     <p>&copy; 2026 私のポートフォリオ</p>
   </footer>
 
+  <!-- JSの読み込み（HTMLと同じフォルダに配置） -->
   <script src="github_search.js"></script>
 </body>
 </html>

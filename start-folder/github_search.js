@@ -28,25 +28,25 @@ async function searchGitHubUser() {
 
     const data = await response.json();
 
-    // 要件項目（アイコン、名前、ユーザー名、フォロワー数、公開リポジトリ数）を表示
+    // 検索結果のUIを出力（画像のデザインに合わせて修正）
+    // 1. テキスト情報を「中央揃え」で並べる
+    // 2. アイコンを一番下の中央に配置
     resultDiv.innerHTML = `
-      <div style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; max-width: 420px; display: flex; gap: 20px; align-items: center; margin-top: 15px;">
-        <!-- アイコン -->
-        <img src="${data.avatar_url}" alt="${data.login}" style="width: 90px; height: 90px; border-radius: 50%;">
+      <div style="text-align: center; margin-top: 20px;">
         
-        <div>
-          <!-- 名前（設定がない場合はユーザー名） -->
-          <h3 style="margin: 0 0 5px 0;">${data.name || data.login}</h3>
-          
-          <!-- ユーザー名（@login） -->
-          <p style="margin: 0 0 10px 0; color: #666; font-size: 0.9em;">@${data.login}</p>
-          
-          <!-- フォロワー数・公開リポジトリ数 -->
-          <p style="margin: 0 0 5px 0;">フォロワー数: <strong>${data.followers}</strong> 人</p>
-          <p style="margin: 0 0 10px 0;">公開リポジトリ数: <strong>${data.public_repos}</strong> 個</p>
-          
-          <a href="${data.html_url}" target="_blank" rel="noopener noreferrer">GitHubで見る ↗</a>
+        <!-- テキスト情報エリア -->
+        <div style="margin-bottom: 20px; font-size: 1em; line-height: 1.8;">
+          <p style="margin: 0;"><strong>ユーザー名:</strong> ${data.login}</p>
+          <p style="margin: 0;"><strong>名前:</strong> ${data.name || '未設定'}</p>
+          <p style="margin: 0;"><strong>フォロワー数:</strong> ${data.followers}</p>
+          <p style="margin: 0;"><strong>公開リポジトリ数:</strong> ${data.public_repos}</p>
         </div>
+
+        <!-- アイコン（画像のように下部中央に配置） -->
+        <img src="${data.avatar_url}" alt="${data.login}" style="width: 100px; height: 100px; border-radius: 8px; border: 1px solid #ddd; display: block; margin: 0 auto 15px auto;">
+        
+        <!-- リンク -->
+        <a href="${data.html_url}" target="_blank" rel="noopener noreferrer" style="font-size: 0.9em;">GitHubで見る ↗</a>
       </div>
     `;
   } catch (error) {
