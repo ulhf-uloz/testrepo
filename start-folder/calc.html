@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>電卓 - 私のポートフォリオ</title>
-  <!-- 共通のCSSを読み込み -->
- <link rel="stylesheet" href="css/style.css">
+  <!-- CSSのパス（相対パス） -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ヘッダー（全ページ共通ナビゲーション） -->
-  <header>
+  <!-- ヘッダー（他のページと共通のクラス名・構造） -->
+  <header class="header">
     <h1>私のポートフォリオ</h1>
     <nav>
       <ul>
@@ -23,10 +23,10 @@
   </header>
 
   <!-- メインコンテンツ -->
-  <main>
+  <main class="container">
     <h2>電卓</h2>
     
-    <div style="margin-bottom: 20px;">
+    <div class="calc-form" style="margin: 20px 0;">
       <!-- 値1 -->
       <input type="number" id="num1" placeholder="値1">
       
@@ -42,8 +42,8 @@
       <input type="number" id="num2" placeholder="値2">
     </div>
 
-    <!-- 結果表示エリア -->
-    <div id="result" style="font-size: 1.2em; font-weight: bold; color: #333;">
+    <!-- 計算結果表示エリア -->
+    <div id="result" class="result-area" style="font-size: 1.2em; font-weight: bold; margin-top: 15px;">
       両方の数値を入力してください
     </div>
   </main>
@@ -53,7 +53,7 @@
     <p>&copy; 2026 私のポートフォリオ</p>
   </footer>
 
-  <!-- 電卓用のJavaScriptを読み込み -->
+  <!-- JSの読み込み -->
   <script src="calc.js"></script>
 </body>
 </html>
